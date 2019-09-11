@@ -1,0 +1,65 @@
+# --------------------------------------------
+# SERVER CONFIGURATION
+# -------------------------------------------- 
+server: 
+  port: 8102
+  
+# --------------------------------------------
+# SPRING SECURITY CONFIGURATION 
+# --------------------------------------------    
+management:
+  endpoints:
+    web:
+      base-path: /manage
+    
+# --------------------------------------------
+# LOG CONFIGURATION
+# --------------------------------------------    
+logging:
+  level:
+    org:
+      springframework: INFO
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+  file: ${spring.application.name}.log
+  path: /var/log   
+    
+# --------------------------------------------
+# SPRING APP CONFIGURATION
+# --------------------------------------------    
+spring:
+  main:
+    lazy-initialization: true
+  jmx:
+    enabled: false
+  aop: 
+    proxy-target-class: true        
+  profiles: 
+    active: def  
+    
+# --------------------------------------------
+# SPRING DB CONFIGURATION
+# --------------------------------------------  
+  data: 
+    mongodb:
+      uri: mongodb://127.0.0.1/ionic
+      database: ionic
+      
+# --------------------------------------------
+# SLEUTH CONFIGURATION
+# --------------------------------------------         
+  sleuth:
+    enabled: true
+    sampler:
+      percentage: 0.0
+    rxjava:
+      schedulers:
+        hook:
+          enabled: false
+
+# --------------------------------------------
+# RIBBON CONFIGURATION
+# --------------------------------------------       
+ribbon:
+  eureka: 
+    enabled: true 
