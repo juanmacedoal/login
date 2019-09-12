@@ -29,5 +29,5 @@ build/
 
 ### VS Code ###
 .vscode/
-/login.log
-/login.log.2019-09-11.0.gz
+/*.log
+/*.log.2019-09-11.0.gz
