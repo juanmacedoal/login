@@ -3,7 +3,7 @@
 # -------------------------------------------- 
 spring:  
   application:
-    name: zipkin
+    name: login
     
 # --------------------------------------------
 # CLOUD CONFIGURATION
